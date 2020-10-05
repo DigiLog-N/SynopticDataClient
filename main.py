@@ -117,9 +117,16 @@ def extract_stations_from_latest_data():
                 of.write("%d\t%s\t%s\t%s\t%s\n" % (distance, state, mnet_id, stid, name))
 
 
-if __name__ == '__main__':
-    token = ''
+def main(token, select_station_list):
+    for station in select_station_list:
+        results, elapsed_time = get_time_series_for_last_year_in_csv(token, station)
+        filepath = 'data/yearly/%s.csv' % station
+        with open(filepath, 'w') as f:
+            f.write(str(results))
+        sleep(5)
 
+
+if __name__ == '__main__':
     '''
     2930P   La Jolla Shores
     DMHSD   Del Mar Heights
@@ -137,14 +144,13 @@ if __name__ == '__main__':
     CBDSD   Carlsbad
     KSAN    San Diego International Airport
     '''
-
+    token = ''
     select_station_list = ['2930P','DMHSD','MSDSD','4160P','CI150','F1955','NMLC1','BVDC1','KEAC1','KCRQ','1386P','3025P','PLMC1','CBDSD']
 
-    for station in select_station_list:
-        results, elapsed_time = get_time_series_for_last_year_in_csv(token, station)
-        filepath = 'data/yearly/%s.csv' % station
-        with open(filepath, 'w') as f:
-            f.write(str(results))
-        sleep(5)
+    # wait one hour
+    wait_time = 60 * 60
 
+    while True:
+        main(token, select_station_list)
+        sleep(wait_time)
 
