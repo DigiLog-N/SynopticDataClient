@@ -1,0 +1,12 @@
+notes
+
+client.py:	client.py is pretty straightforward, and worked during testing. John will be using this to push data into CloudTurbine. No further testing should be needed, unless John encounters an issue.
+server.py:	server.py is just a dummy receiver for client.py, in lieu of sending to an actual CloudTurbine. There is nothing additional to test.
+main.py:	main.py has been tested against 14 stations and can download a year's worth of data in a reasonable amount of time.
+		SynopticData stations update about once every five minutes at the quickest, based on experience. Certain sensors on certain stations could be once per hour, for instance.
+			Depending on deployment, main.py could be run as a cron job, or wrapped in a loop that sleeps every n minutes.
+			One test that may prove useful is wrapping and sleeping for 24-48 hours to certify is is reliable over a relatively extended period of time.
+			Another test will be balancing the number of queries against the query limit, and the needs of the model.
+				The paid tier has a high query limit, but the number of queries we make increases linearly with the number of stations we want.
+				Once or twice an hour might be sufficient for our needs. Adjusting those parameters is a test of sorts.
+
