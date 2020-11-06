@@ -13,8 +13,8 @@ from time import sleep
 
 host = '127.0.0.1'
 port = 8888
-sleep_between_packets = False
-sleep_time = 2
+sleep_between_packets = True
+sleep_time = 0.25
 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
