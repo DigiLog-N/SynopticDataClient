@@ -40,4 +40,21 @@ https://developers.synopticdata.com/
 Getting started page:
 https://developers.synopticdata.com/mesonet/v2/getting-started/
 
+IDs for the 14+1 sites used:
+'2930P'
+'DMHSD'
+'MSDSD'
+'4160P'
+'CI150'
+'F1955'
+'NMLC1'
+'BVDC1'
+'KEAC1'
+'KCRQ '
+'1386P'
+'3025P'
+'PLMC1'
+'CBDSD'
+'KSAN'
+
 
