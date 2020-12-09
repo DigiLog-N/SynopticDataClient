@@ -34,6 +34,8 @@ Currently each row does not include the station's lat and lon values. Instead
 it includes the station's unique identifier (STID). It may be more desireable
 to insert the lat/lon values as well.
 
+Data taken from SynopticData's APIs is ostensibly public.
+
 MesoWest/SynopicData's developer site:
 https://developers.synopticdata.com/
 
