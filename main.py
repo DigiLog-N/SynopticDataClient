@@ -9,8 +9,9 @@ from time import sleep
 def haversine_distance_estimation(lon1, lat1, lon2, lat2):
     """
     Calculate the great circle distance between two points
-    on the earth (specified in decimal degrees)
-    (Cheap distance approximation)
+    on the earth, specified in decimal degrees. Inexpensive
+    distance approximation. Taken from:
+    https://stackoverflow.com/questions/4913349/haversine-formula-in-python-bearing-and-distance-between-two-gps-points
     """
     # convert decimal degrees to radians
     lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
